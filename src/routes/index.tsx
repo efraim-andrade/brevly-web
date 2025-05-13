@@ -1,3 +1,4 @@
+import { Warning } from "@phosphor-icons/react";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
@@ -5,5 +6,11 @@ export const Route = createFileRoute("/")({
 });
 
 function RouteComponent() {
-	return <div>Hello "/"!</div>;
+	return (
+		<div className="bg-gray-100 h-dvh w-dvw">
+			<h1 className="text-lg">
+				Hello world <Warning className="inline-block" />
+			</h1>
+		</div>
+	);
 }

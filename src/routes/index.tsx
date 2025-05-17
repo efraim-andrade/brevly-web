@@ -1,8 +1,9 @@
 import { Button } from "@/components/Button";
+import { Card } from "@/components/Card";
 import { Header } from "@/components/Header";
 import { IconButton } from "@/components/IconButton";
 import { Input } from "@/components/Input";
-import { Warning } from "@phosphor-icons/react";
+import { DownloadSimple, Warning } from "@phosphor-icons/react";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
@@ -11,10 +12,19 @@ export const Route = createFileRoute("/")({
 
 function RouteComponent() {
 	return (
-		<main className="max-w-[980px] mx-auto">
+		<main className="max-w-[980px] mx-auto ">
 			<Header />
 
-			<div className="flex flex-col gap-4">
+			<Card
+				title="Novo Link"
+				renderAction={
+					<Button
+						icon={<DownloadSimple />}
+						label="Baixar CSV"
+						variant="secondary"
+					/>
+				}
+			>
 				<Button
 					label="Secondary"
 					type="button"
@@ -33,7 +43,7 @@ function RouteComponent() {
 					placeholder="Placeholder"
 					error="Something went wrong"
 				/>
-			</div>
+			</Card>
 		</main>
 	);
 }

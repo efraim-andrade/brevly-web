@@ -1,5 +1,5 @@
+import { cn } from "@/utils/cn";
 import type { IconProps } from "@phosphor-icons/react";
-import clsx from "clsx";
 import type { ButtonHTMLAttributes, ReactElement } from "react";
 import React from "react";
 
@@ -15,7 +15,7 @@ const baseStyles = "rounded-lg text-md disabled:opacity-50 cursor-pointer ";
 const variantStyles = {
 	primary: "bg-blue-base p-4 text-white w-full hover:bg-blue-darks",
 	secondary:
-		"bg-gray-200 border-2 border-transparent p-2 text-gray-500 hover:border-blue-base",
+		"bg-gray-200 border-1 border-transparent p-2 text-gray-500 hover:border-blue-base",
 };
 
 export function Button({
@@ -30,7 +30,7 @@ export function Button({
 
 	return (
 		<button
-			className={`${clsx(baseStyles, variantStyles[variant], className)} flex items-center justify-center gap-[6px]`}
+			className={`${cn(baseStyles, variantStyles[variant], className)} flex items-center justify-center gap-[6px]`}
 			{...rest}
 		>
 			{styledIcon && <div className="text-gray-600">{styledIcon}</div>}

@@ -36,6 +36,9 @@
   --text-xs: 10px;
   --text-xs--line-height: 14px;
   --text-xs--font-weight: regular;
+
+  /* Border */
+  --border-1: 1px;
 }
 
 body {

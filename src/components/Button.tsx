@@ -10,10 +10,11 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 	variant?: "primary" | "secondary";
 };
 
-const baseStyles = "rounded-lg text-md disabled:opacity-50 cursor-pointer ";
+const baseStyles =
+	"rounded-lg text-md disabled:opacity-50 cursor-pointer transition-colors duration-200";
 
 const variantStyles = {
-	primary: "bg-blue-base p-4 text-white w-full hover:bg-blue-darks",
+	primary: "bg-blue-base p-4 text-white w-full hover:bg-blue-dark",
 	secondary:
 		"bg-gray-200 border-1 border-transparent p-2 text-gray-500 hover:border-blue-base",
 };

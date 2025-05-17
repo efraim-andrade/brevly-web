@@ -1,6 +1,6 @@
 export function Header() {
 	return (
-		<div className="flex place-content-center mb-6">
+		<div className="flex place-content-center mb-3">
 			<img
 				className="h-[24px] w-[96px]"
 				src="/assets/logo.svg"

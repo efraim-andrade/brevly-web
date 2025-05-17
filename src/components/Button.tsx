@@ -1,18 +1,21 @@
+import type { IconProps } from "@phosphor-icons/react";
 import clsx from "clsx";
-import type { ButtonHTMLAttributes } from "react";
+import type { ButtonHTMLAttributes, ReactElement } from "react";
+import React from "react";
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 	label: string;
 	className?: string;
-	icon?: React.ReactNode;
+	icon?: ReactElement<IconProps>;
 	variant?: "primary" | "secondary";
 };
 
-const baseStyles = "rounded-lg text-md disabled:opacity-50";
+const baseStyles = "rounded-lg text-md disabled:opacity-50 cursor-pointer ";
 
 const variantStyles = {
-	primary: "bg-blue-base hover:bg-blue-darks p-4 text-white w-full",
-	secondary: "bg-gray-200 border-2 border-blue-base p-2 text-gray-500",
+	primary: "bg-blue-base p-4 text-white w-full hover:bg-blue-darks",
+	secondary:
+		"bg-gray-200 border-2 border-transparent p-2 text-gray-500 hover:border-blue-base ",
 };
 
 export function Button({
@@ -22,12 +25,15 @@ export function Button({
 	icon,
 	...rest
 }: ButtonProps) {
+	const styledIcon =
+		icon && React.cloneElement(icon, { className: "text-grey-600 ", size: 16 });
+
 	return (
 		<button
-			className={clsx(baseStyles, variantStyles[variant], className)}
+			className={`${clsx(baseStyles, variantStyles[variant], className)} flex items-center justify-center gap-[6px]`}
 			{...rest}
 		>
-			{icon}
+			<div className="text-gray-600">{styledIcon}</div>
 
 			<span>{label}</span>
 		</button>
